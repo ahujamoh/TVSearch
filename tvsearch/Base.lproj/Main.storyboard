@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kGM-s4-Gmp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="hco-FB-PZQ">
+            <objects>
+                <viewController id="kGM-s4-Gmp" customClass="ViewController" customModule="tvsearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XJ6-67-Co3"/>
+                        <viewControllerLayoutGuide type="bottom" id="muf-X6-KtI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gJQ-DQ-Jpo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="kJ7-1w-2eX">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kGM-s4-Gmp" id="9Ap-uM-4Or"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SQq-68-Uc7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Aep-he-o36">
+                                    <size key="itemSize" width="332" height="424"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TVSeriesCell" id="X7S-Sl-TLi" customClass="TVSeriesCollectionViewCell" customModule="tvsearch" customModuleProvider="target">
+                                        <rect key="frame" x="21.5" y="0.0" width="332" height="424"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="332" height="424"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQ5-hg-bqX">
+                                                    <rect key="frame" x="71" y="20" width="191" height="307"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="KQ5-hg-bqX" secondAttribute="height" multiplier="9:16" constant="18.3125" id="ZUu-jC-wO9"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" text="Series name" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6P-Wc-qup">
+                                                    <rect key="frame" x="9" y="335" width="303" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="KQ5-hg-bqX" firstAttribute="top" secondItem="X7S-Sl-TLi" secondAttribute="topMargin" constant="12" id="0Mg-YC-3sG"/>
+                                            <constraint firstItem="KQ5-hg-bqX" firstAttribute="leading" secondItem="X7S-Sl-TLi" secondAttribute="leadingMargin" constant="63" id="JRL-ws-69K"/>
+                                            <constraint firstItem="y6P-Wc-qup" firstAttribute="leading" secondItem="X7S-Sl-TLi" secondAttribute="leadingMargin" constant="1" id="WTK-VE-PmT"/>
+                                            <constraint firstItem="KQ5-hg-bqX" firstAttribute="centerX" secondItem="X7S-Sl-TLi" secondAttribute="centerX" id="l2O-kQ-kCD"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="y6P-Wc-qup" secondAttribute="bottom" constant="60" id="nds-rr-Ngv"/>
+                                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="y6P-Wc-qup" secondAttribute="trailing" id="nzE-gO-UYk"/>
+                                            <constraint firstItem="y6P-Wc-qup" firstAttribute="top" secondItem="KQ5-hg-bqX" secondAttribute="bottom" constant="8" symbolic="YES" id="tzF-tu-unY"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="tvSeriesImage" destination="KQ5-hg-bqX" id="fuy-MU-VhL"/>
+                                            <outlet property="tvSeriesName" destination="y6P-Wc-qup" id="uke-5u-YCt"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="kGM-s4-Gmp" id="e4g-gS-Prp"/>
+                                    <outlet property="delegate" destination="kGM-s4-Gmp" id="O65-oc-F8V"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="muf-X6-KtI" firstAttribute="top" secondItem="SQq-68-Uc7" secondAttribute="bottom" id="9g6-bL-PNc"/>
+                            <constraint firstItem="kJ7-1w-2eX" firstAttribute="top" secondItem="XJ6-67-Co3" secondAttribute="bottom" id="QnK-CH-5Hn"/>
+                            <constraint firstItem="SQq-68-Uc7" firstAttribute="leading" secondItem="gJQ-DQ-Jpo" secondAttribute="leading" id="dYr-RO-4uO"/>
+                            <constraint firstItem="SQq-68-Uc7" firstAttribute="top" secondItem="kJ7-1w-2eX" secondAttribute="bottom" id="mZd-FA-ttR"/>
+                            <constraint firstAttribute="trailing" secondItem="SQq-68-Uc7" secondAttribute="trailing" id="ng5-aD-NwQ"/>
+                            <constraint firstAttribute="trailing" secondItem="kJ7-1w-2eX" secondAttribute="trailing" id="pHZ-Ln-9GT"/>
+                            <constraint firstItem="kJ7-1w-2eX" firstAttribute="leading" secondItem="gJQ-DQ-Jpo" secondAttribute="leading" id="rhA-l2-26F"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="SQq-68-Uc7" id="GJu-Fh-YeV"/>
+                        <outlet property="searchBar" destination="kJ7-1w-2eX" id="9Wp-4W-2HX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xOJ-sP-q0t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-74.400000000000006" y="-1142.8785607196403"/>
+        </scene>
+    </scenes>
+</document>
